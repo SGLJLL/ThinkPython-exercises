@@ -1,0 +1,47 @@
+import math
+radius = 5
+volume = 4/3 * math.pi * radius**3
+volume
+
+
+
+
+cover_price = 24.95
+discount = 0.4
+first_copy_shipping = 3
+additional_shipping = 0.75
+num_copies = 60
+total_cost = (cover_price * discount * num_copies) + first_copy_shipping + (additional_shipping * (num_copies - 1))
+total_cost
+
+
+
+
+import datetime
+
+# start time
+start_time = datetime.time(hour=6, minute=52)
+
+# easy pace in minutes per mile
+easy_pace_minutes_per_mile = 8 + (15 / 60)
+
+# tempo pace in minutes per mile
+tempo_pace_minutes_per_mile = 7 + (12 / 60)
+
+# total running time in minutes
+total_running_time_minutes = (easy_pace_minutes_per_mile * 2) + (tempo_pace_minutes_per_mile * 3)
+
+# convert running time to hours and minutes
+hours = int(total_running_time_minutes / 60)
+minutes = int(total_running_time_minutes % 60)
+
+# convert start time to datetime object
+start_datetime = datetime.datetime.combine(datetime.date.today(), start_time)
+
+# add running time to start time to get end time
+end_datetime = start_datetime + datetime.timedelta(hours=hours, minutes=minutes)
+
+# convert end time back to time object
+end_time = end_datetime.time()
+
+print("End time:", end_time)
